@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="error" monitorInterval="60" packages="univac.utils.slack">
+    <appenders>    
+  		<Console name="Console" target="SYSTEM_OUT">            
+        	<ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} %-5level - %msg%xEx%n"/>
+        </Console>
+
+        <Slack name="Slack" WebHook="https://hooks.slack.com/services/--webhook--</webhook>">
+        	<ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%msg%xEx%n" charset="UTF-8"/>
+        </Slack>
+    </appenders>
+    
+    <loggers>
+        <root level="trace">
+            <appender-ref ref="Slack"/>
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+</configuration>
