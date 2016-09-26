@@ -6,7 +6,7 @@
             <PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} %-5level - %msg%xEx%n"/>
         </Console>
 
-        <Slack name="Slack" WebHook="https://hooks.slack.com/services/--webhook--</webhook>">
+        <Slack name="Slack" WebHook="https://hooks.slack.com/services/--webhook--">
         	<ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="%msg%xEx%n" charset="UTF-8"/>
         </Slack>
